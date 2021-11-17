@@ -1,0 +1,31 @@
+:: StoryTitle
+Tweego_upload_test
+
+::StoryInit
+<<set $inv to []>>
+
+:: StoryData
+{
+	"ifid": "6D31866C-780B-4CE9-A63C-FE0761970802",
+	"format": "SugarCube",
+	"format-version": "2.30.0",
+	"start": "Start",
+	"zoom": 1
+}
+
+
+:: Start
+Welcome to cooking game
+
+[[character_selection]]
+
+
+:: character_selection
+<img src="Characters/CharacterSelectionScreen.png" alt="CharacterSelectionScreen" usemap="#charselectworkmap">
+
+<map name="charselectworkmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+</map>
+
