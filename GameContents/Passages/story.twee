@@ -1,0 +1,44 @@
+:: StoryTitle
+TheCookingGame
+
+
+
+
+:: StoryData
+{
+	"ifid": "6D31866C-780B-4CE9-A63C-FE0761970802",
+	"format": "SugarCube",
+	"format-version": "2.30.0",
+	"start": "Start",
+	"zoom": 1
+}
+
+
+::StoryInit
+<<set $inv to []>>
+<<set $character to "">>
+<<set $charImage to "">>
+
+:: Start
+Welcome to cooking game
+BASE PATH: $basePath
+TUTWATCHED: $tutWatched
+[[character_selection]]
+
+
+:: character_selection
+CHARACTER SELECTION
+<img src="images/Characters/CharacterSelectionScreen.png" alt="CharacterSelectionScreen" usemap="#charselectworkmap">
+
+
+<map name="charselectworkmap">
+    <area target="" alt="Jelly" title="Jelly" coords="387,606,108,150" shape="rect" onclick="SelectCharacter('Jelly')">
+    <area target="" alt="Blobby" title="Blobby" coords="433,152,710,604" shape="rect" onclick="SelectCharacter('Blobby')">
+    <area target="" alt="Crabby" title="Crabby" coords="756,155,1034,604" shape="rect" onclick="SelectCharacter('Crabby')">
+</map>
+
+:: character_selected
+you have selected $character
+[img[$charImage]]
+[[Yessir lets go|tutorial_start]]
+[[No i dont like this one|character_selection]]

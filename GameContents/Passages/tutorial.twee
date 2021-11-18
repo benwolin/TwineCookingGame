@@ -1,0 +1,15 @@
+:: tutorial_start
+welcome $character
+[img[$charImage]]
+<video autoplay>
+<source src="videos/intro.mp4">
+</video>
+
+<<timed 40s>>
+[[Get in the kitchen|tutorial_kitchen]]
+<</timed>>
+
+[[Skip Video|tutorial_kitchen]]
+
+:: tutorial_kitchen
+TUTORIAL ROOM
