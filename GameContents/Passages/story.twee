@@ -26,6 +26,7 @@ TheCookingGame
 :: StoryCaption
 test caption
 <<= InventoryString()>>
+
 <<= CharacterStatString()>>
 
 :: Start

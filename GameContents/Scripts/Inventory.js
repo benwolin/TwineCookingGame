@@ -1,7 +1,8 @@
 var inventory = {};
 
 function MaxInventory(){
-	return CurrentCharacterInfo().MaxInventory
+	let charInfo = CurrentCharacterInfo()
+	return charInfo != null? charInfo.MaxInventory : 1;
 
 }
 
@@ -55,6 +56,8 @@ window.InventoryString = () => {
 			invStr += `\n${itemCount} ${item}`;
 		}
 	}
+	if(InventoryCount() >= MaxInventory())
+		invStr += "\nAT MAX INVENTORY"
 	invStr += "\n---------------";
 
 	return invStr
