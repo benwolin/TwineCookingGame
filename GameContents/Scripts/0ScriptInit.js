@@ -1,4 +1,5 @@
 window.Engine = Engine;
+config.history.controls = false;
 
 //COMMON FUNCTIONS
 function SetVar (varname, val){
@@ -6,6 +7,10 @@ function SetVar (varname, val){
 }
 function GetVar(varname){
 	return state.active.variables[varname];
+}
+
+function UpdateStoryCaption(){
+	return new Wikifier(null, '<<updatebar>>')
 }
 
 async function SleepCallback(cb, timeout){
@@ -36,3 +41,38 @@ SetVar("imagePath", setup.ImagePath);
 var baseHtml = `<base href="${setup.Path}">`
 $('body').prepend(baseHtml);
 //END INITIALIZE PATH
+
+
+//CHARACTER STATS
+var SELECTED_CHARACTER = ""
+const CHARACTER_INFO = {
+	"Jelly":{
+		"MaxInventory": 6,
+		"Image": `${setup.ImagePath}Characters/Jelly.png`
+	},
+	"Crabby":{
+		"MaxInventory": 4,
+		"Image": `${setup.ImagePath}Characters/Crabby.png`
+	},
+	"Blobby":{
+		"MaxInventory": 2,
+		"Image": `${setup.ImagePath}Characters/Blobby.png`
+	}
+}
+
+function CurrentCharacterInfo(){
+	return CHARACTER_INFO[SELECTED_CHARACTER]
+}
+
+const DISPLAYED_STATS = ["MaxInventory"]
+window.CharacterStatString = () => {
+	if (SELECTED_CHARACTER == "")
+		return ""
+
+	stats = `---${SELECTED_CHARACTER} CHARACTER STATS---`
+	
+
+
+
+}
+//END CHARACTER STATS

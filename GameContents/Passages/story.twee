@@ -18,12 +18,19 @@ TheCookingGame
 <<set $character to "">>
 <<set $charImage to "">>
 
+::UpdateStoryCaption [widget]
+<<widget "updatebar">><<silently>>
+<<replace "#story-caption">><<display "StoryCaption">><</replace>>
+<</silently>><</widget>>
+
 :: StoryCaption
 test caption
 <<= InventoryString()>>
+<<= CharacterStatString()>>
 
 :: Start
 Welcome to cooking game
+TEST UPDATE
 BASE PATH: $basePath
 [[Select your character|character_selection]]
 
