@@ -17,6 +17,7 @@ TheCookingGame
 :: StoryInit
 <<set $character to "">>
 <<set $charImage to "">>
+<<set $MainRecipe to "">>
 
 ::UpdateStoryCaption [widget]
 <<widget "updatebar">><<silently>>
@@ -28,6 +29,9 @@ test caption
 <<= InventoryString()>>
 
 <<= CharacterStatString()>>
+<<if $MainRecipe is not "">>
+CURRENT PRIMARY RECIPE: $MainRecipe
+<<endif>>
 
 :: Start
 Welcome to cooking game
