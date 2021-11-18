@@ -14,16 +14,18 @@ TheCookingGame
 }
 
 
-::StoryInit
-<<set $inv to []>>
+:: StoryInit
 <<set $character to "">>
 <<set $charImage to "">>
+
+:: StoryCaption
+test caption
+<<= InventoryString()>>
 
 :: Start
 Welcome to cooking game
 BASE PATH: $basePath
-TUTWATCHED: $tutWatched
-[[character_selection]]
+[[Select your character|character_selection]]
 
 
 :: character_selection

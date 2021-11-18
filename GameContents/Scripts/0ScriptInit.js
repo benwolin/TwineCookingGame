@@ -15,7 +15,8 @@ async function SleepCallback(cb, timeout){
 //END COMMON FUNCTIONSs
 
 //INITIALIZE PATH
-if (window.hasOwnProperty("storyFormat") || (document.location.href.indexOf("AppData") !== -1)) {
+const OVERRIDE_PATH = true
+if (OVERRIDE_PATH || window.hasOwnProperty("storyFormat") || (document.location.href.indexOf("AppData") !== -1)) {
 	/* Change this to the path where the HTML file is
 		 located if you want to run this from inside Twine. */
 	// Running inside Twine application

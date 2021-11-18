@@ -1,0 +1,63 @@
+:: main_kitchen
+<img src="images/UI/KitchenMain.png" usemap="#kitchen-map">
+
+<map name="kitchen-map">
+    <area target="" alt="RecipeBook" title="RecipeBook" coords="789,691,60" shape="circle" onclick="Engine.play('recipe_book')">
+    <area target="" alt="IngredientBag" title="IngredientBag" coords="930,693,61" shape="circle" onclick = "Engine.play('ingredient_produce')">
+</map>
+
+:: recipe_book
+<img src="images/UI/RecipeBook.png">
+[[go back|main_kitchen]]
+
+
+
+
+::ingredient_produce
+<img src="images/UI/Ing_Produce.png" usemap="#ingredient-map">
+<map name="ingredient-map">
+    <area target="" alt="produce" title="produce" coords="154,101,41" shape="circle" onclick="Engine.play('ingredient_produce')">
+    <area target="" alt="dairy" title="dairy" coords="273,102,39" shape="circle" onclick="Engine.play('ingredient_dairy')">
+    <area target="" alt="seasoning" title="seasoning" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
+    <area target="" alt="dry" title="dry" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_dry')">
+</map>
+[[go back|main_kitchen]]
+
+
+
+
+::ingredient_dairy
+<img src="images/UI/Ing_Dairy.png" usemap="#ingredient-map">
+<map name="ingredient-map">
+    <area target="" alt="produce" title="produce" coords="154,101,41" shape="circle" onclick="Engine.play('ingredient_produce')">
+    <area target="" alt="dairy" title="dairy" coords="273,102,39" shape="circle" onclick="Engine.play('ingredient_dairy')">
+    <area target="" alt="seasoning" title="seasoning" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
+    <area target="" alt="dry" title="dry" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_dry')">
+</map>
+[[go back|main_kitchen]]
+
+
+
+
+::ingredient_seasoning
+<img src="images/UI/Ing_Seasoning.png" usemap="#ingredient-map">
+<map name="ingredient-map">
+    <area target="" alt="produce" title="produce" coords="154,101,41" shape="circle" onclick="Engine.play('ingredient_produce')">
+    <area target="" alt="dairy" title="dairy" coords="273,102,39" shape="circle" onclick="Engine.play('ingredient_dairy')">
+    <area target="" alt="seasoning" title="seasoning" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
+    <area target="" alt="dry" title="dry" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_dry')">
+</map>
+[[go back|main_kitchen]]
+
+
+
+
+::ingredient_dry
+<img src="images/UI/Ing_Dry.png" usemap="#ingredient-map">
+<map name="ingredient-map">
+    <area target="" alt="produce" title="produce" coords="154,101,41" shape="circle" onclick="Engine.play('ingredient_produce')">
+    <area target="" alt="dairy" title="dairy" coords="273,102,39" shape="circle" onclick="Engine.play('ingredient_dairy')">
+    <area target="" alt="seasoning" title="seasoning" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
+    <area target="" alt="dry" title="dry" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_dry')">
+</map>
+[[go back|main_kitchen]]
