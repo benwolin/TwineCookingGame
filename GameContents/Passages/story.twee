@@ -51,6 +51,12 @@ CHARACTER SELECTION
     <area target="" alt="Crabby" title="Crabby" coords="756,155,1034,604" shape="rect" onclick="SelectCharacter('Crabby')">
 </map>
 
+PLAYTEST ONLY
+<<button "Jelly">><<script>>SelectCharacter('Jelly');<</script>><</button>>
+<<button "Blobby">><<script>>SelectCharacter('Blobby');<</script>><</button>>
+<<button "Crabby">><<script>>SelectCharacter('Crabby');<</script>><</button>>
+
+
 :: character_selected
 you have selected $character
 [img[$charImage]]

@@ -62,3 +62,25 @@ window.InventoryString = () => {
 
 	return invStr
 }
+
+//INVENTORY SELECTION
+window.SelectionCallback = null
+var inventoryPrompt = ""
+function PromptInventorySelection(callback, prompt = ""){
+	//SetVar("prevpassage", passage())
+	inventoryPrompt = prompt
+	window.SelectionCallback = callback
+	Engine.play("inventory_selection")
+}
+
+window.InventorySelectionString = () => {
+	let invStr = inventoryPrompt + "\n\n"
+	for(let item in inventory){
+		if(inventory[item] > 0){
+			invStr += '<<button "'+item+'">><<'+'script>>'+'SelectionCallback("'+item+'");<<'+'/script>>'+'<</bu'+'tton>>\n'
+		}
+	}
+
+	invStr += '\n<<button "'+'GO BACK'+'">><<'+'script>>'+'SelectionCallback("'+'NONE'+'");<<'+'/script>>'+'<</bu'+'tton>>\n'
+	return invStr
+}

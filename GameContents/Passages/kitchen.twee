@@ -6,95 +6,22 @@
     <area target="" alt="IngredientBag" title="IngredientBag" coords="930,693,61" shape="circle" onclick = "Engine.play('ingredient_produce')">
 </map>
 
-:: recipe_book
-RECIPE SEARCH
-<input type="text" placeholder="recipe" onkeydown="SearchRecipeBook(this)"/>  
+TODO MAP TO KITCHEN TABLE
+<<button "Cooking Table">><<script>>Engine.play('cooking_table');<</script>><</button>>
 
-<img src="images/UI/RecipeBook.png">
-<<= RecipeBookPageStr()>>
-
-<<button "Show Recipe List">><<script>>SetCurrentRecipe("RECIPELIST");<</script>><</button>>
-<<if $CurrentRecipe is not $MainRecipe>>
-<<button "Return to main recipe">><<script>>SetCurrentRecipe();<</script>><</button>>
-<<endif>>
-[[go back|main_kitchen]]
+TODO TRASH CAN
+<<button "TRASH CAN">><<script>>TrashStuff();<</script>><</button>>
 
 
+::inventory_selection
+<<= InventorySelectionString()>>
+
+::cooking_table
+TODO GET GRAPHICS FOR COOKING TABLE
+<<button "chop stuff">><<script>>ApplyModifier("CHOPPED");<</script>><</button>>
+<<button "boil stuff">><<script>>ApplyModifier("BOILED");<</script>><</button>>
+<<button "smash stuff">><<script>>ApplyModifier("SMASHED");<</script>><</button>>
+
+[[main_kitchen]]
 
 
-::ingredient_produce
-<img src="images/UI/Ing_Produce.png" usemap="#ingredient-map">
-<map name="ingredient-map">
-    <area target="" alt="produce" title="produce" coords="154,101,41" shape="circle" onclick="Engine.play('ingredient_produce')">
-    <area target="" alt="dairy" title="dairy" coords="273,102,39" shape="circle" onclick="Engine.play('ingredient_dairy')">
-    <area target="" alt="seasoning" title="seasoning" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
-    <area target="" alt="dry" title="dry" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_dry')">
-
-
-    <area target="" alt="tomato" title="tomato" coords="104,175,264,400" shape="rect" onclick="AddItemToInventory('tomato')">
-    <area target="" alt="pepper" title="green_pepper" coords="296,175,455,400" shape="rect" onclick="AddItemToInventory('green pepper')">
-    <area target="" alt="eggplant" title="eggplant" coords="488,176,648,399" shape="rect" onclick="AddItemToInventory('eggplant')">
-    <area target="" alt="onion" title="onion" coords="680,176,841,400" shape="rect" onclick="AddItemToInventory('onion')">
-    <area target="" alt="carrot" title="carrot" coords="873,177,1032,401" shape="rect" onclick="AddItemToInventory('carrot')">
-    <area target="" alt="cucomba" title="cucomba" coords="105,441,265,664" shape="rect" onclick="AddItemToInventory('cucomba')">
-    <area target="" alt="apple" title="apple" coords="297,439,456,663" shape="rect" onclick="AddItemToInventory('apple')">
-    <area target="" alt="lime" title="lime" coords="488,441,648,664" shape="rect" onclick="AddItemToInventory('lime')">
-    <area target="" alt="strawberry" title="strawberry" coords="680,439,840,662" shape="rect" onclick="AddItemToInventory('strawberry')">
-    <area target="" alt="pear" title="pear" coords="872,439,1032,664" shape="rect" onclick="AddItemToInventory('pear')">
-</map>
-[[go back|main_kitchen]]
-
-
-
-
-::ingredient_dairy
-<img src="images/UI/Ing_Dairy.png" usemap="#ingredient-map">
-<map name="ingredient-map">
-    <area target="" alt="produce" title="produce" coords="154,101,41" shape="circle" onclick="Engine.play('ingredient_produce')">
-    <area target="" alt="dairy" title="dairy" coords="273,102,39" shape="circle" onclick="Engine.play('ingredient_dairy')">
-    <area target="" alt="seasoning" title="seasoning" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
-    <area target="" alt="dry" title="dry" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_dry')">
-
-
-    <area target="" alt="cheese" title="cheese" coords="104,175,264,399" shape="rect" onclick="AddItemToInventory('cheese')">
-    <area target="" alt="milk" title="milk" coords="296,174,456,399" shape="rect" onclick="AddItemToInventory('milk')">
-    <area target="" alt="butter" title="butter" coords="488,176,648,400" shape="rect" onclick="AddItemToInventory('butter')">
-    <area target="" alt="egg" title="egg" coords="680,175,841,401" shape="rect" onclick="AddItemToInventory('egg')">
-</map>
-[[go back|main_kitchen]]
-
-
-
-
-::ingredient_seasoning
-<img src="images/UI/Ing_Seasoning.png" usemap="#ingredient-map">
-<map name="ingredient-map">
-    <area target="" alt="produce" title="produce" coords="154,101,41" shape="circle" onclick="Engine.play('ingredient_produce')">
-    <area target="" alt="dairy" title="dairy" coords="273,102,39" shape="circle" onclick="Engine.play('ingredient_dairy')">
-    <area target="" alt="seasoning" title="seasoning" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
-    <area target="" alt="dry" title="dry" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_dry')">
-
-
-    <area target="" alt="garlic" title="garlic" coords="103,176,263,399" shape="rect" onclick="AddItemToInventory('garlic')">
-    <area target="" alt="salt" title="salt" coords="298,177,456,402" shape="rect" onclick="AddItemToInventory('salt')">
-    <area target="" alt="black_pepper" title="black_pepper" coords="488,176,648,400" shape="rect" onclick="AddItemToInventory('black pepper')">
-    <area target="" alt="olive_oil" title="olive_oil" coords="680,175,843,401" shape="rect" onclick="AddItemToInventory('olive oil')">
-</map>
-[[go back|main_kitchen]]
-
-
-
-
-::ingredient_dry
-<img src="images/UI/Ing_Dry.png" usemap="#ingredient-map">
-<map name="ingredient-map">
-    <area target="" alt="produce" title="produce" coords="154,101,41" shape="circle" onclick="Engine.play('ingredient_produce')">
-    <area target="" alt="dairy" title="dairy" coords="273,102,39" shape="circle" onclick="Engine.play('ingredient_dairy')">
-    <area target="" alt="seasoning" title="seasoning" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
-    <area target="" alt="dry" title="dry" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_dry')">
-
-
-    <area target="" alt="flour" title="flour" coords="102,176,265,400" shape="rect" onclick="AddItemToInventory('flour')">
-
-</map>
-[[go back|main_kitchen]]
