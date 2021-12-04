@@ -1,7 +1,7 @@
 var currentPageRecipe;
 var mainRecipe;
 
-var BASE_RECIPE_BOOK = {
+var base_recipe_book = {
 	"Basic-Salsa": ["Smashed Tomato", "Chopped Basil"],
 	"Tomato-Sauce": ["Boiled Baisc-Salsa"],
 	"Dough": ["Flour", "Stirred Eggs"],
@@ -9,12 +9,44 @@ var BASE_RECIPE_BOOK = {
 	"Tutorial-Tortellini": ["Noodles", "Graded Cheese"]
 }
 
-var CUSTOM_RECIPES = {}
 
+
+function CookFood(ingrs){
+	for(let item in ingrs){
+		window.RemoveItemFromInventory(ingrs[item]);
+	}
+	for (let food in base_recipe_book){
+		let foodIngr = base_recipe_book[food]
+		if(foodIngr.sort().join(',')=== ingrs.sort().join(',')){
+			return food
+		}
+	}
+
+	return "";
+}
+
+
+window.CreateNewRecipe = (ele)=>{
+
+	if(event.key === 'Enter') {
+		let recipeName = ele.value
+        if(recipeName in base_recipe_book || recipeName ==""){
+			Engine.play("invalid_recipe_name")
+		}
+		else{
+			let currentIngr = GetVar("IngrToCombine")
+			base_recipe_book[recipeName] = currentIngr
+			window.AddItemToInventory(recipeName)
+			window.SetCurrentRecipe(recipeName)
+		}
+    }
+	
+	
+}
 
 function GetRecipeList(){
 	let recList = "RECIPE LIST\n";
-	for(let rec in BASE_RECIPE_BOOK){
+	for(let rec in base_recipe_book){
 		recList += '<<button "'+rec+'">>'+'<<scr'+'ipt>>SetCurrentRecipe("'+rec+'");<</sc'+'ript>><</but'+'ton>>\n'; 
 		//have to do this for some reason dont ask questions
 	}
@@ -46,7 +78,7 @@ window.SetCurrentRecipe = (recipeName = mainRecipe) => {
 function IngredientListForRecipe(rec){
 	let ingStr = ""
 	let ingCount = 1
-	let recipeList = BASE_RECIPE_BOOK[rec]
+	let recipeList = base_recipe_book[rec]
 	for (let item in recipeList){
 		ingStr += `${ingCount}. ${recipeList[item]}\n`
 		ingCount += 1 
@@ -64,7 +96,7 @@ window.RecipeBookPageStr = () => {
 	if (currentPageRecipe == "RECIPELIST"){
 		return GetRecipeList();
 	}
-	if (currentPageRecipe in BASE_RECIPE_BOOK)
+	if (currentPageRecipe in base_recipe_book)
 		return `HOW TO MAKE ${currentPageRecipe}:
 		MIX TOGETHER:
 		${CurrentIngredientList()}`;

@@ -14,6 +14,10 @@ function InventoryCount(){
 	return itemCount
 }
 
+function ClearInventory(){
+	inventory = {}
+}
+
 window.AddItemToInventory = (item) =>{
 	if (InventoryCount() >= MaxInventory()){
 		return false
@@ -29,7 +33,7 @@ window.AddItemToInventory = (item) =>{
 }
 
 window.RemoveItemFromInventory = (item) => {
-	if(item in inventory && inventory.item > 0){
+	if(item in inventory && inventory[item] > 0){
 		inventory[item] -= 1;
 		UpdateStoryCaption()
 		return true;

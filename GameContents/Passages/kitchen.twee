@@ -1,4 +1,6 @@
 :: main_kitchen
+<<set $IngrToCombine to []>>
+
 <img src="images/UI/KitchenMain.png" usemap="#kitchen-map">
 
 <map name="kitchen-map">
@@ -9,9 +11,36 @@
 TODO MAP TO KITCHEN TABLE
 <<button "Cooking Table">><<script>>Engine.play('cooking_table');<</script>><</button>>
 
+TODO COMBINE INGR grapgics
+[[combine_ingredients]]
+
 TODO TRASH CAN
 <<button "TRASH CAN">><<script>>TrashStuff();<</script>><</button>>
 
+TODO DISH TURN IN
+<<button "TURN IN THE DISH">><<script>>DishTurnIn();<</script>><</button>>
+
+::combine_ingredients
+Ingredients to combine:
+$IngrToCombine
+
+<<button "ADD INGREDIENT">><<script>>AddIngredientToCombine();<</script>><</button>>
+<<button "CONFIRM COMBINE INGREDIENTS">><<script>>CombineIngredients();<</script>><</button>>
+[[main_kitchen]]
+
+::not_enough_ingr
+not enough ingredients to combine
+[[go back|combine_ingredients]]
+
+::name_new_food
+It appears this food item is not in the recipe book...
+you simply must record the recipe name?
+
+<input type="text" placeholder="recipe name" onkeydown="CreateNewRecipe(this)"/>
+
+::invalid_recipe_name
+this is an invalid recipe name
+[[try again|name_new_food]]
 
 ::inventory_selection
 <<= InventorySelectionString()>>
