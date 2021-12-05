@@ -4,11 +4,12 @@ var mainRecipe;
 var base_recipe_book = {
 	"Basic-Salsa": ["Smashed Tomato", "Chopped Basil"],
 	"Tomato-Sauce": ["Boiled Baisc-Salsa"],
-	"Dough": ["Flour", "Stirred Eggs"],
-	"Noodles": ["Boiled Flattened Dough"],
+	"Dough": ["Flour", "Whisked Eggs"],
+	"Noodles": ["Boiled Smashed Dough", "Salt"],
 	"Tutorial-Tortellini": ["Noodles", "Graded Cheese"]
 }
 
+var createdRecipies = [];
 
 
 function CookFood(ingrs){
@@ -36,6 +37,7 @@ window.CreateNewRecipe = (ele)=>{
 		else{
 			let currentIngr = GetVar("IngrToCombine")
 			base_recipe_book[recipeName] = currentIngr
+			createdRecipies.push(recipeName)
 			window.AddItemToInventory(recipeName)
 			window.SetCurrentRecipe(recipeName)
 		}

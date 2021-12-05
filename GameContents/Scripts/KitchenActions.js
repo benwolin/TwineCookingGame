@@ -4,7 +4,7 @@ window.ApplyModifier = (mod)=> {
 			inventory[ingr] -= 1;
 			window.AddItemToInventory(`${mod} ${ingr}`);
 		}
-		Engine.play("cooking_table");
+		Engine.play("main_kitchen");
 	}
 	, `What would you like to make ${mod}?`)
 }
@@ -23,7 +23,6 @@ window.TrashStuff = ()=>{
 		},
 		"Select items to trash"	
 	)
-	
 }
 
 window.AddIngredientToCombine = ()=>{
@@ -44,7 +43,7 @@ window.AddIngredientToCombine = ()=>{
 window.CombineIngredients= ()=>{
 	let currentIngr = GetVar("IngrToCombine");
 	if(currentIngr.length <= 1){
-		Engine.play("main_kitchen")
+		Engine.play("not_enough_ingr")
 		return
 	}
 	let cookedItem = CookFood(currentIngr);

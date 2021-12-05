@@ -31,13 +31,20 @@ test caption
 <<= CharacterStatString()>>
 <<if $MainRecipe is not "">>
 CURRENT PRIMARY RECIPE: $MainRecipe
+
+
+Opened Recipe Page:
+<<= RecipeBookPageStr()>>
 <<endif>>
 
+
+
 :: Start
-Welcome to cooking game
-TEST UPDATE
-BASE PATH: $basePath
-[[Select your character|character_selection]]
+<img src="images/UI/StartScreen.png" usemap="#start-map">
+
+<map name="start-map">
+    <area target="" alt="startGame" title="startGame" onclick="Engine.play('character_selection')" coords="598,551,985,655" shape="rect">
+</map>
 
 
 :: character_selection

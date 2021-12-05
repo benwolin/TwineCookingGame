@@ -3,19 +3,19 @@
 
 <img src="images/UI/KitchenMain.png" usemap="#kitchen-map">
 
+
 <map name="kitchen-map">
-    <area target="" alt="RecipeBook" title="RecipeBook" coords="789,691,60" shape="circle" onclick="Engine.play('recipe_book')">
-    <area target="" alt="IngredientBag" title="IngredientBag" coords="930,693,61" shape="circle" onclick = "Engine.play('ingredient_produce')">
+    <area target="" alt="recipeBook" title="recipeBook" onclick="Engine.play('recipe_book')" coords="852,704,51" shape="circle">
+    <area target="" alt="ingredientBag" title="ingredientBag" onclick="Engine.play('ingredient_produce')" coords="971,702,50" shape="circle">
+    <area target="" alt="trashCan" title="trashCan" onclick="TrashStuff()" coords="733,703,50" shape="circle">
+    <area target="" alt="combineIngredients" title="combineIngredients" onclick="Engine.play('combine_ingredients')" coords="614,704,50" shape="circle">
+    <area target="" alt="boil" title="boil" onclick="ApplyModifier('Boiled')" coords="471,527,474,517,476,515,478,503,484,499,485,480,471,464,492,442,481,431,452,453,400,448,383,457,374,467,361,479,358,499,368,524,382,540,403,552,447,551,466,542,474,517" shape="poly">
+    <area target="" alt="smash" title="smash" onclick="ApplyModifier('Smashed')" coords="490,523,521,555,551,533,540,523,575,490,563,472,534,507,515,497" shape="poly">
+    <area target="" alt="whisk" title="whisk" onclick="ApplyModifier('Whisked')" coords="1031,332,1050,334,1065,399,1062,450,1017,444,1013,392,1026,378,1021,351" shape="poly">
+    <area target="" alt="chop" title="chop" onclick="ApplyModifier('Chopped')" coords="545,346,553,339,675,337,695,353,694,406,570,448,543,429" shape="poly">
+    <area target="" alt="bake" title="bake" onclick="ApplyModifier('Baked')" coords="620,502,616,528,635,551,635,647,774,644,771,551,708,496" shape="poly">
 </map>
 
-TODO MAP TO KITCHEN TABLE
-<<button "Cooking Table">><<script>>Engine.play('cooking_table');<</script>><</button>>
-
-TODO COMBINE INGR grapgics
-[[combine_ingredients]]
-
-TODO TRASH CAN
-<<button "TRASH CAN">><<script>>TrashStuff();<</script>><</button>>
 
 TODO DISH TURN IN
 <<button "TURN IN THE DISH">><<script>>DishTurnIn();<</script>><</button>>
@@ -44,13 +44,5 @@ this is an invalid recipe name
 
 ::inventory_selection
 <<= InventorySelectionString()>>
-
-::cooking_table
-TODO GET GRAPHICS FOR COOKING TABLE
-<<button "chop stuff">><<script>>ApplyModifier("CHOPPED");<</script>><</button>>
-<<button "boil stuff">><<script>>ApplyModifier("BOILED");<</script>><</button>>
-<<button "smash stuff">><<script>>ApplyModifier("SMASHED");<</script>><</button>>
-
-[[main_kitchen]]
 
 
