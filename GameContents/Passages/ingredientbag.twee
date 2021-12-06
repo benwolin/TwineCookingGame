@@ -3,8 +3,8 @@
 <map name="ingredient-map">
     <area target="" alt="produce" title="produce" coords="154,101,41" shape="circle" onclick="Engine.play('ingredient_produce')">
     <area target="" alt="dairy" title="dairy" coords="273,102,39" shape="circle" onclick="Engine.play('ingredient_dairy')">
-    <area target="" alt="seasoning" title="seasoning" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
-    <area target="" alt="dry" title="dry" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_dry')">
+    <area target="" alt="seasoning" title="seasoning" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
+    <area target="" alt="dry" title="dry" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_dry')">
 
 
     <area target="" alt="tomato" title="tomato" coords="104,175,264,400" shape="rect" onclick="AddItemToInventory('tomato')">
@@ -28,9 +28,9 @@
 <map name="ingredient-map">
     <area target="" alt="produce" title="produce" coords="154,101,41" shape="circle" onclick="Engine.play('ingredient_produce')">
     <area target="" alt="dairy" title="dairy" coords="273,102,39" shape="circle" onclick="Engine.play('ingredient_dairy')">
-    <area target="" alt="seasoning" title="seasoning" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
-    <area target="" alt="dry" title="dry" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_dry')">
-
+    <area target="" alt="seasoning" title="seasoning" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
+    <area target="" alt="dry" title="dry" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_dry')">
+    
 
     <area target="" alt="cheese" title="cheese" coords="104,175,264,399" shape="rect" onclick="AddItemToInventory('cheese')">
     <area target="" alt="milk" title="milk" coords="296,174,456,399" shape="rect" onclick="AddItemToInventory('milk')">
@@ -47,8 +47,8 @@
 <map name="ingredient-map">
     <area target="" alt="produce" title="produce" coords="154,101,41" shape="circle" onclick="Engine.play('ingredient_produce')">
     <area target="" alt="dairy" title="dairy" coords="273,102,39" shape="circle" onclick="Engine.play('ingredient_dairy')">
-    <area target="" alt="seasoning" title="seasoning" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
-    <area target="" alt="dry" title="dry" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_dry')">
+    <area target="" alt="seasoning" title="seasoning" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
+    <area target="" alt="dry" title="dry" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_dry')">
 
 
     <area target="" alt="garlic" title="garlic" coords="103,176,263,399" shape="rect" onclick="AddItemToInventory('garlic')">
@@ -66,8 +66,8 @@
 <map name="ingredient-map">
     <area target="" alt="produce" title="produce" coords="154,101,41" shape="circle" onclick="Engine.play('ingredient_produce')">
     <area target="" alt="dairy" title="dairy" coords="273,102,39" shape="circle" onclick="Engine.play('ingredient_dairy')">
-    <area target="" alt="seasoning" title="seasoning" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
-    <area target="" alt="dry" title="dry" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_dry')">
+    <area target="" alt="seasoning" title="seasoning" coords="513,104,41" shape="circle" onclick="Engine.play('ingredient_seasoning')">
+    <area target="" alt="dry" title="dry" coords="392,102,41" shape="circle" onclick="Engine.play('ingredient_dry')">
 
 
     <area target="" alt="flour" title="flour" coords="102,176,265,400" shape="rect" onclick="AddItemToInventory('flour')">
