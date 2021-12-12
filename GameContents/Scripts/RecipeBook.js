@@ -4,9 +4,9 @@ var mainRecipe;
 var base_recipe_book = {
 	"Basic-Salsa": ["Smashed Tomato", "Chopped Basil"],
 	"Tomato-Sauce": ["Boiled Baisc-Salsa"],
-	"Dough": ["Flour", "Whisked Eggs"],
-	"Noodles": ["Boiled Smashed Dough", "Salt"],
-	"Tutorial-Tortellini": ["Noodles", "Graded Cheese"]
+	"Dough": ["flour", "whisked egg"],
+	"Noodles": ["boiled smashed Dough", "salt"],
+	"Tutorial-Tortellini": ["Noodles", "chopped cheese"]
 }
 
 var createdRecipies = [];
@@ -27,10 +27,80 @@ function CookFood(ingrs){
 }
 
 
+function _BaseIngr(modifiedIngr){
+	return modifiedIngr.split(" ").at(-1);
+}
+
+function recur(recip){
+	if(recip in base_recipe_book){
+
+	}
+	else{
+		return recip
+	}
+}
+
+function GetAllIngrForRecipe(recipName){
+	return recipName in base_recipe_book? base_recipe_book[recipName]:[recipName];
+	/*
+	let baseName = _BaseIngr(recipName)
+	console.log("getting ingrs for" + baseName)
+	if(baseName in base_recipe_book){	
+		let ingrs = base_recipe_book[baseName]
+		let subIngrs = []
+
+		for(let i = 0; i < ingrs.length; i++){
+			console.log("getting ingrs for recipe"+ingrs[i])
+			let retrievedIngrs = GetAllIngrForRecipe(ingrs[i])
+			
+			subIngrs.concat(retrievedIngrs)
+		}
+		console.log("retrieved "+subIngrs)
+		return subIngrs
+	}
+	else{
+		console.log('retuning base ingr' + recipName)
+		return [recipName]
+	}
+	*/
+
+
+}
+
+function GetPercentRecipeSuccess(base, real){
+	
+	let baseIngr = GetAllIngrForRecipe(base) //base in base_recipe_book? base_recipe_book[base]:[base]; 
+	let realIngr = GetAllIngrForRecipe(real) //real in base_recipe_book? base_recipe_book[real]:[real];
+	let totalIngr = baseIngr.length + realIngr.length
+	console.log('TOTAL INGR' + realIngr)
+	let diffBase = baseIngr.filter(x => !realIngr.includes(x)).map(_BaseIngr);
+	let diffReal = realIngr.filter(x => !baseIngr.includes(x)).map(_BaseIngr);
+	console.log('diffs base real')
+	console.log(diffBase)
+	console.log(diffReal)
+
+	let totalDiff = diffBase.length + diffReal.length;
+
+	let bigDiffs = diffBase.filter(x => !diffReal.includes(x)).concat(diffReal.filter(x => !diffBase.includes(x)));
+	console.log('bigDiffs ' + bigDiffs)
+	let bigDiffCount = bigDiffs.length;
+	let smallDiffCount = totalDiff - bigDiffCount;
+	console.log(bigDiffCount)
+	console.log(smallDiffCount);
+
+	let sumDiffCount = bigDiffCount + (.5*smallDiffCount);
+	console.log("sum diff " + sumDiffCount)
+	let accur = (sumDiffCount/(totalIngr) *100)
+	console.log('accur '+ accur )
+	return (100 - accur)
+}
+
+
 window.CreateNewRecipe = (ele)=>{
 
 	if(event.key === 'Enter') {
-		let recipeName = ele.value
+		let recipeName = ele.value;
+		recipeName.replace(" ", "-");
         if(recipeName in base_recipe_book || recipeName ==""){
 			Engine.play("invalid_recipe_name")
 		}
