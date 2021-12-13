@@ -1,6 +1,17 @@
 window.Engine = Engine;
 config.history.controls = false;
 
+prehistory['no-stow-and-disable-debug'] = function (taskname) { //remove ability to close sidebar
+	// This should be a single use task.
+	delete prehistory[taskname];
+
+	// Remove the UI bar's stow/unstow toggle button.
+	$('#ui-bar-toggle').remove();
+
+	// Disable Test mode's debug views initially.
+	DebugView.disable();
+}; 
+
 //COMMON FUNCTIONS
 function SetVar (varname, val){
 	state.active.variables[varname] = val;

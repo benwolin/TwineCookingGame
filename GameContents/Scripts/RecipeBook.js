@@ -6,10 +6,21 @@ var base_recipe_book = {
 	"Tomato-Sauce": ["Boiled Baisc-Salsa"],
 	"Dough": ["flour", "whisked egg"],
 	"Noodles": ["boiled smashed Dough", "salt"],
-	"Tutorial-Tortellini": ["Noodles", "chopped cheese"]
+	"Tutorial-Tortellini": ["Noodles", "chopped cheese"],
+	"Crepes": ["todo"],
+	"French-Onion-Soup": ["todo"],
+	"Ratatouille": ["todo"]
 }
 
 var createdRecipies = [];
+
+var recipe_page_images = {
+	"Default": `${setup.ImagePath}RecipePages/RecipeBook.png`,
+	"Crepes": `${setup.ImagePath}RecipePages/Crepes.png`,
+	"French-Onion-Soup": `${setup.ImagePath}RecipePages/French Onion Soup.png`,
+	"Tutorial-Tortellini": `${setup.ImagePath}RecipePages/Tortellini.png`,
+	"Ratatouille": `${setup.ImagePath}RecipePages/Crepes.png`
+}
 
 
 function CookFood(ingrs){
@@ -163,7 +174,10 @@ function CurrentIngredientList(){
 }
 
 
-
+window.RecipePageImage = () => {
+	let recipeImagePath = currentPageRecipe in recipe_page_images?recipe_page_images[currentPageRecipe]: recipe_page_images["Default"]
+	return '<img src="'+recipeImagePath+'">'
+}
 window.RecipeBookPageStr = () => {
 	if (currentPageRecipe == "RECIPELIST"){
 		return GetRecipeList();

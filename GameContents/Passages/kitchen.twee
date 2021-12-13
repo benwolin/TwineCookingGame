@@ -21,6 +21,8 @@ TODO DISH TURN IN
 <<button "TURN IN THE DISH">><<script>>DishTurnIn();<</script>><</button>>
 
 ::combine_ingredients
+[img[$happyCharImage]]
+
 Ingredients to combine:
 $IngrToCombine
 
@@ -29,20 +31,27 @@ $IngrToCombine
 [[main_kitchen]]
 
 ::not_enough_ingr
+[img[$sadCharImage]]
+
 not enough ingredients to combine
 [[go back|combine_ingredients]]
 
 ::name_new_food
+[img[$happyCharImage]]
+
 It appears this food item is not in the recipe book...
 you simply must record the recipe name?
 
 <input type="text" placeholder="recipe name" onkeydown="CreateNewRecipe(this)"/>
 
 ::invalid_recipe_name
+[img[$sadCharImage]]
+s
 this is an invalid recipe name
 [[try again|name_new_food]]
 
 ::inventory_selection
+[img[$happyCharImage]]
 <<= InventorySelectionString()>>
 
 ::dish_eval

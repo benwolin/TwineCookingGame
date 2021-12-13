@@ -78,12 +78,7 @@ window.DishTurnIn = ()=>{
 	PromptInventorySelection(
 		(ingr)=>{
 			if(ingr in inventory){
-				SetVar("TurnedInRecipe", ingr)
-				let accuracy = GetPercentRecipeSuccess(ingr, mainRecipe);
-				SetVar("RecentAccuracy", accuracy)
-				AddCriticPoints(accuracy)
-				
-				Engine.play("dish_eval")
+				TurnInDish(ingr)
 			}
 			else{
 				Engine.play("main_kitchen")

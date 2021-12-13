@@ -11,6 +11,16 @@ function AddCriticPoints(numPoints){
 	SetVar("CreativityPoints", CreativityPoints)
 }
 
+function TurnInDish(dish){
+	SetVar("TurnedInRecipe", ingr)
+	let accuracy = GetPercentRecipeSuccess(ingr, mainRecipe);
+	SetVar("RecentAccuracy", accuracy)
+	AddCriticPoints(accuracy)
+	
+	Engine.play("dish_eval")
+
+}
+
 var storyIndex = 0
 const StoryLinePath = [
 	{

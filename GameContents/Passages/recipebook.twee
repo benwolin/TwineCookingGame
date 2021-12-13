@@ -2,7 +2,7 @@
 RECIPE SEARCH
 <input type="text" placeholder="recipe" onkeydown="SearchRecipeBook(this)"/>  
 
-<img src="images/UI/RecipeBook.png">
+<<= RecipePageImage()>>
 <<= RecipeBookPageStr()>>
 
 <<button "Show Recipe List">><<script>>SetCurrentRecipe("RECIPELIST");<</script>><</button>>
