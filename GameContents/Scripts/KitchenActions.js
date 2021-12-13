@@ -1,6 +1,20 @@
+var modSounds = {
+    'chopped': new Audio(`${setup.SoundPath}/Chopping.wav`),
+    'baked': new Audio(`${setup.SoundPath}/Baking.wav`),
+    'boiled': new Audio(`${setup.SoundPath}/Boiling.wav`),
+    'smashed': new Audio(`${setup.SoundPath}/Smashing.wav`),
+    'whisked': new Audio(`${setup.SoundPath}/Whisking.wav`)
+}
+
 window.ApplyModifier = (mod)=> {
+	if(mod in modSounds){
+		console.log("PLAYING SOUND")
+		modSounds[mod].play()
+	}
 	PromptInventorySelection((ingr)=>{
+		console.log("MODIFIER APPLUONH"+ mod)
 		if(ingr in inventory){
+			
 			inventory[ingr] -= 1;
 			window.AddItemToInventory(`${mod} ${ingr}`);
 		}
@@ -59,6 +73,7 @@ window.CombineIngredients= ()=>{
 
 
 
+
 window.DishTurnIn = ()=>{
 	PromptInventorySelection(
 		(ingr)=>{
@@ -66,7 +81,8 @@ window.DishTurnIn = ()=>{
 				SetVar("TurnedInRecipe", ingr)
 				let accuracy = GetPercentRecipeSuccess(ingr, mainRecipe);
 				SetVar("RecentAccuracy", accuracy)
-				console.log("DISH TURNED IN WIT ACCURACY" + accuracy)
+				AddCriticPoints(accuracy)
+				
 				Engine.play("dish_eval")
 			}
 			else{
