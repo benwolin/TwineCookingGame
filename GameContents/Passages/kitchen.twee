@@ -2,8 +2,11 @@
 <<set $IngrToCombine to []>>
 
 <img src="images/UI/KitchenMain.png" usemap="#kitchen-map">
+<img src="images/UI/Serve.png" usemap="#serve-map">
 
-
+<map name="serve-map">
+    <area target="" alt="serve" title="serve" onclick="DishTurnIn()" coords="485,100,773,179" shape="rect">
+</map>
 <map name="kitchen-map">
     <area target="" alt="recipeBook" title="recipeBook" onclick="Engine.play('recipe_book')" coords="852,704,51" shape="circle">
     <area target="" alt="ingredientBag" title="ingredientBag" onclick="Engine.play('ingredient_produce')" coords="971,702,50" shape="circle">
@@ -16,9 +19,6 @@
     <area target="" alt="bake" title="bake" onclick="ApplyModifier('baked')" coords="620,502,616,528,635,551,635,647,774,644,771,551,708,496" shape="poly">
 </map>
 
-
-TODO DISH TURN IN
-<<button "TURN IN THE DISH">><<script>>DishTurnIn();<</script>><</button>>
 
 ::combine_ingredients
 [img[$happyCharImage]]

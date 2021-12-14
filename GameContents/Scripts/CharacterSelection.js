@@ -51,6 +51,7 @@ window.SelectCharacter = (character) => {
 	SetVar("happyCharImage", CHARACTER_INFO[character].HappyImage)
 	SetVar("sadCharImage", CHARACTER_INFO[character].SadImage)
 	SELECTED_CHARACTER = character
+	UpdateEndMan()
 	Engine.play("character_selected")
 }
 

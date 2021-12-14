@@ -1,15 +1,19 @@
 var currentPageRecipe;
 var mainRecipe;
-
+var openedSecretRecipeCount = 0;
 var base_recipe_book = {
-	"Basic-Salsa": ["Smashed Tomato", "Chopped Basil"],
-	"Tomato-Sauce": ["Boiled Baisc-Salsa"],
 	"Dough": ["flour", "whisked egg"],
 	"Noodles": ["boiled smashed Dough", "salt"],
-	"Tutorial-Tortellini": ["Noodles", "chopped cheese"],
-	"Crepes": ["todo"],
-	"French-Onion-Soup": ["todo"],
-	"Ratatouille": ["todo"]
+	"Tutorial-Tortellini": ["Noodles", "baked chopped cheese"],
+	"Crepes": ["baked Batter", "salt", "strawberry"],
+	"Batter": ["whisked egg", "flour", "milk"],
+	"Basic-Bitch-Seasoning": ["garlic", "salt", "black pepper"],
+	"Cheesy-Onion-Surprise": ["cheese", "chopped onion", "Basic-Bitch-Seasoning"],
+	"French-Onion-Soup": ["Broth", "baked Cheesy-Onion-Surprise"],
+	"Broth":["butter", "boiled olive oil"],
+	"Ratatouille": ["smashed tomato", "chopped Bunch-of-Veggies", "Basic-Bitch-Seasoning", "olive oil"],
+	"Bunch-of-Veggies":["cucomba", "tomato", "eggplant", "pear"],
+	"the-secret-recipe-DO-NOT-OPEN-DANGEROUS":["baked love", "whisked joy", "boiled creativity", "Basic-Bitch-Seasoning"]
 }
 
 var createdRecipies = [];
@@ -22,6 +26,19 @@ var recipe_page_images = {
 	"Ratatouille": `${setup.ImagePath}RecipePages/Crepes.png`
 }
 
+function SecretRecipeOpened(){
+	if(openedSecretRecipeCount < 1){
+		AddCreativityPoints(50)
+	}
+	else if (openedSecretRecipeCount < 5){
+		AddCreativityPoints(5)
+	}
+	else{
+		base_recipe_book["the-secret-recipe-DO-NOT-OPEN-DANGEROUS"].push("OK STOP OPENING THE SECRET RECIPE")
+	}
+
+	openedSecretRecipeCount += 1
+}
 
 function CookFood(ingrs){
 	for(let item in ingrs){
@@ -35,6 +52,13 @@ function CookFood(ingrs){
 	}
 
 	return "";
+}
+
+
+function GetRecipeLength(recName){
+	if(recName in base_recipe_book){
+		return base_recipe_book[recName].join("").length
+	}
 }
 
 
@@ -78,6 +102,10 @@ function GetAllIngrForRecipe(recipName){
 
 }
 
+function IsCreatedRecipe(rec){
+	return createdRecipies.includes(rec)
+}
+
 function GetPercentRecipeSuccess(base, real){
 	
 	let baseIngr = GetAllIngrForRecipe(base) //base in base_recipe_book? base_recipe_book[base]:[base]; 
@@ -108,7 +136,6 @@ function GetPercentRecipeSuccess(base, real){
 
 
 window.CreateNewRecipe = (ele)=>{
-
 	if(event.key === 'Enter') {
 		let recipeName = ele.value;
 		recipeName.replace(" ", "-");
@@ -121,6 +148,8 @@ window.CreateNewRecipe = (ele)=>{
 			createdRecipies.push(recipeName)
 			window.AddItemToInventory(recipeName)
 			window.SetCurrentRecipe(recipeName)
+			AddCreativityPoints(10)
+			
 		}
     }
 	
@@ -154,7 +183,11 @@ window.SetMainRecipe = (recipe) => {
 window.SetCurrentRecipe = (recipeName = mainRecipe) => {
 	currentPageRecipe = recipeName
 	SetVar("CurrentRecipe", recipeName)
+	if (currentPageRecipe== "the-secret-recipe-DO-NOT-OPEN-DANGEROUS"){
+		SecretRecipeOpened()
+	}
 	Engine.play('recipe_book')
+
 
 }
 

@@ -1,0 +1,50 @@
+::TortGood
+good tort
+[[NextRecipe]]
+
+::TortBad
+bad tort creative
+[[NextRecipe]]
+
+::FrenchGood
+you did good on the soup
+[[NextRecipe]]
+
+
+::FrenchBad
+you did bad on the soup but it was creative
+[[NextRecipe]]
+
+
+::RatGood
+you did good on the rat 
+[[NextRecipe]]
+
+
+::RatBad
+you did bad on the rat but creative
+[[NextRecipe]]
+
+
+::CrepGood
+good crepes
+[[NextRecipe]]
+
+
+::CrepBad
+bad creps but creative??
+[[EndReview]]
+
+::NextRecipe
+[img[$Ocho]]
+Alright the next recipe on the menu is $MainRecipe
+[[get in the kitchen|main_kitchen]]
+
+
+
+::EndReview
+you made it to the end!!!!
+<<= EndScreenStr()>>
+----Final Scores---
+CriticPoints: $CriticPoints
+Creativity Points: $CreativityPoints

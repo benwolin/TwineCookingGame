@@ -17,6 +17,7 @@ window.ApplyModifier = (mod)=> {
 			
 			inventory[ingr] -= 1;
 			window.AddItemToInventory(`${mod} ${ingr}`);
+			AddCreativityPoints(5)
 		}
 		Engine.play("main_kitchen");
 	}

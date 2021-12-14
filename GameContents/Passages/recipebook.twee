@@ -9,4 +9,4 @@ RECIPE SEARCH
 <<if $CurrentRecipe is not $MainRecipe>>
 <<button "Return to main recipe">><<script>>SetCurrentRecipe();<</script>><</button>>
 <<endif>>
-[[go back|main_kitchen]]
+[[back to the kitchen|main_kitchen]]

@@ -13,5 +13,6 @@ welcome $character
 
 :: tutorial_kitchen
 TUTORIAL ROOM
+[img[$Ocho]]
 Ive given you a new recipe to cook: <<= SetMainRecipe("Tutorial-Tortellini")>>
 [[go to main kitchen|main_kitchen]]

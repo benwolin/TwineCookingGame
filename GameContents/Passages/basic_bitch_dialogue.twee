@@ -1,0 +1,85 @@
+::goodbitch
+[img[$CriticImg1]]
+Mmmmm, it looks tasty at the very least. 
+[[next|good2]]
+
+::good2
+[img[$CriticImg2]]
+It smells delightful.
+[[next|good3]]
+
+::good3
+[img[$CriticImg3]]
+It is splendid! You must try it at once.
+[[next|good4]]
+
+::good4
+[img[$CriticImg1]]
+I agree. It is the best.
+[[next|good5]]
+
+::good5
+[img[$CriticImg2]]
+It's perfectly done and tastes fantastic!
+[[next|good6]]
+
+
+::good6
+[img[$CriticImg2]]
+How do you feel having made a perfect $TurnedInRecipe, chef?
+[[respond|good7]]
+
+::good7
+[img[$sadCharImage]]
+I greatly appreciate such praise from you all extremely distinguished critics. 
+
+(In their head) But I could probably make a better non-classic $TurnedInRecipe.
+
+<<if $lastRecipe>>
+[[Go to the final review|EndReview]]
+<<else>>
+[[Lets keep moving|NextRecipe]]
+<<endif>>
+
+
+
+
+::badbitch
+[img[$CriticImg1]]
+Hm. Interesting.
+[[next|bad2]]
+
+::bad2
+[img[$CriticImg2]]
+It smells different.
+[[next|bad3]]
+
+::bad3
+[img[$CriticImg3]]
+It’s not classic. There were definitely new liberties taken with this dish.
+[[next|bad4]]
+
+::bad4
+[img[$CriticImg1]]
+Huh. It is interesting, but is it good?
+[[next|bad5]]
+
+::bad5
+[img[$CriticImg2]]
+No.
+[[next|bad7]]
+
+
+::bad7
+[img[$CriticImg3]]
+I agree. I think the classic recipe is a classic for a reason.
+[[respond|bad8]]
+
+::bad8
+[img[$happyCharImage]]
+Thank you for your critiques!
+<<if $lastRecipe>>
+[[Go to the final review|EndReview]]
+<<else>>
+[[Lets keep moving|NextRecipe]]
+<<endif>>

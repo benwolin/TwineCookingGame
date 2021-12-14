@@ -25,7 +25,9 @@ TheCookingGame
 <</silently>><</widget>>
 
 :: StoryCaption
-test caption
+[img[$EndMan]]
+TOTAL CRITIC POINTS: $CriticPoints
+TOTAL CREATIVITY HAPPINESS POINTS: $CreativityPoints
 <<= InventoryString()>>
 
 <<= CharacterStatString()>>
@@ -40,6 +42,7 @@ Opened Recipe Page:
 
 
 :: Start
+MAKE SURE TO OPEN YOUR SIDEBAR!!!!!!
 <img src="images/UI/StartScreen.png" usemap="#start-map">
 
 <map name="start-map">
@@ -66,6 +69,8 @@ PLAYTEST ONLY
 
 :: character_selected
 you have selected $character
+
+Make sure to check out their description and stats on the sidebar before making your choice
 [img[$charImage]]
-[[Yessir lets go|tutorial_start]]
-[[No i dont like this one|character_selection]]
+[[Yes this is me lets start|tutorial_start]]
+[[No I dont like this one|character_selection]]
